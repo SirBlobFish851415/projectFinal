@@ -1,18 +1,62 @@
-let holdTimer;
-const popup = document.getElementById("popup");
-const popupText = document.getElementById("popup-text");
+document.querySelectorAll('.icon').forEach((icon, index) => {
+    let holdTimer;
 
-document.querySelectorAll(".interactive").forEach(item => {
-    item.addEventListener("mousedown", () => {
+    icon.addEventListener('mousedown', () => {
         holdTimer = setTimeout(() => {
-            popupText.textContent = item.dataset.info;
-            popup.classList.remove("hidden");
-        }, 3000); 
+
+            const info = icon.getAttribute("data-info");
+            document.getElementById("popup-text").textContent = info;
+            document.getElementById("popup").classList.remove("hidden");
+
+            explodeIcon(icon);
+
+        }, 3000);
     });
 
-    item.addEventListener("mouseup", () => clearTimeout(holdTimer));
-    item.addEventListener("mouseleave", () => clearTimeout(holdTimer));
+    icon.addEventListener('mouseup', () => clearTimeout(holdTimer));
+    icon.addEventListener('mouseleave', () => clearTimeout(holdTimer));
 });
+
+function explodeIcon(icon) {
+    const rect = icon.getBoundingClientRect();
+
+    const container = document.createElement("div");
+    container.classList.add("explosion-container");
+    container.style.left = rect.left + "px";
+    container.style.top = rect.top + "px";
+    document.body.appendChild(container);
+
+    const smoke = document.createElement("div");
+    smoke.classList.add("smoke");
+    smoke.style.left = "55px";
+    smoke.style.top = "55px";
+    container.appendChild(smoke);
+
+    for (let i = 0; i < 12; i++) {
+        const p = document.createElement("div");
+        p.classList.add("particle");
+
+        const dx = (Math.random() - 0.5) * 200 + "px";
+        const dy = (Math.random() - 0.5) * 200 + "px";
+
+        p.style.setProperty("--dx", dx);
+        p.style.setProperty("--dy", dy);
+
+        p.style.left = "70px";
+        p.style.top = "70px";
+
+        container.appendChild(p);
+    }
+
+    icon.style.opacity = "0";
+    icon.style.pointerEvents = "none";
+
+    setTimeout(() => {
+        icon.style.display = "none";
+        container.remove();
+    }, 800);
+}
+
 
 popup.addEventListener("click", () => {
     popup.classList.add("hidden");
