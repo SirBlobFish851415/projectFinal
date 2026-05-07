@@ -2,61 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Café UnSeen | Truth Not Withheld</title>
+    <title>Café UnSeen | Welcome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="front.css">
 </head>
 
 <body>
-    <div class="page-container">
 
-        <h1 class="title">Café UnSeen</h1>
-        <p class="subtitle">The labor behind your daily ritual</p>
-
-        <div class="icon interactive" style="top: 80px; left: 120px;" 
-             data-info="Wage gap: Barista $12/hr vs CEO $4000/hr">
-            <img src="icons/bean_bag.png" alt="Bean Bag">
-        </div>
-
-        <div class="icon interactive" style="top: 200px; left: 350px;" 
-            data-info="Farmers paid $1.20/lb while retail markup reaches 400%">
-            <img src="icons/beans.png" alt="Beans">
-            </div>
-
-        <div class="icon interactive" style="top: 400px; left: 150px;" 
-            data-info="Bottled coffee: plastic waste + high carbon shipping footprint">
-            <img src="icons/bottled_coffee.png" alt="Bottled Coffee">
-        </div>
-
-        <div class="icon interactive" style="top: 300px; left: 600px;" 
-            data-info="Cappuccino: 53 gallons of water used per cup (farm to café)">
-            <img src="icons/cappuccino.png" alt="Cappuccino">
-        </div>
-
-        <div class="icon interactive" style="top: 500px; left: 450px;" 
-            data-info="Disposable cups: 50 billion thrown away yearly in the US">
-            <img src="icons/cup.png" alt="Cup">
-        </div>
-
-        <div class="icon interactive" style="top: 120px; left: 950px;" 
-            data-info="Espresso machines: high energy use + hidden maintenance labor">
-            <img src="icons/espresso_machine.png" alt="Espresso Machine">
-        </div>
-
-        <div class="icon interactive" style="top: 600px; left: 250px;" 
-            data-info="Latte: milk production is the largest CO₂ contributor in cafés">
-            <img src="icons/latte.png" alt="Latte">
-        </div>
-
-    </div>
-
-    <div id="popup" class="popup hidden">
+    <div id="popup" class="popup">
         <div class="popup-content">
-            <p id="popup-text"></p>
+            <p>
+                Welcome to <strong>Café UnSeen</strong> — a space where the familiar ritual of coffee
+                is stripped of its comfort and convenience.  
+                <br><br>
+                Behind every cup lies a chain of labor, extraction, and environmental cost that is
+                often invisible to the consumer.
+                <br><br>
+                To view these lies click on an item and hold down for 3 secs.
+            </p>
+
+            <button id="closePopup" class="popup-btn">Continue</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="front-container">
+        <h1 class="front-title">Café UnSeen</h1>
+
+        <a href="main.html" class="enter-btn">Enter the Café</a>
+    </div>
+
+    <script src="front.js"></script>
 </body>
 </html>
