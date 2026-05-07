@@ -167,3 +167,32 @@ body::before {
         opacity: 0; 
     }
 }
+
+.back-home-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    padding: 8px 13px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+
+    color: #eaeaea;
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+
+    transition: 0.25s ease;
+}
+
+.back-home-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(0,0,0,0.6);
+}
